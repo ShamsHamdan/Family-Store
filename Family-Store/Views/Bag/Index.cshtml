@@ -1,0 +1,116 @@
+﻿@model List<Bags>
+@{ ViewBag.Title = "bag";}
+
+<style>
+   
+    .v {
+        text-align: center;
+        display: inline-block;
+        width: 32%;
+        font-size:2em;
+    }
+
+
+</style>
+<h2>bags details</h2>
+
+<div class="n">
+    
+    <div class="n">
+
+        <form asp-action="search" method="get">
+
+            <div>
+                <label for="s"> search by bag color</label>
+                <input type="text" name="k" id="s" />
+                <button type="submit">search</button>
+
+
+
+            </div>
+        </form>
+    </div>
+ <div class="n">
+
+        <form asp-action="Order" method="get">
+
+
+
+            <label for="bag">Order By:</label>
+            <select name="order" id="bag">
+                <option value="price">Price</option>
+                <option value="color">Color</option>
+            </select>
+
+            <input type="submit" value="Submit">
+
+
+
+
+        </form>
+
+    </div>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+    <table class="table table-bordered" table-striped>
+        <thead>
+
+            <tr>
+                <th>IDB</th>
+                <th>Color</th>
+                <th>type</th>
+                <th>matrail</th>
+                <th>price</th>
+
+
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var clo in Model)
+            {
+ <tr>
+                    <td>@clo.IDB</td>
+                    <td>@clo.Bcolor</td>
+                    <td>@clo.Btype</td>
+                    <td><@clo.Bmaterail></td>
+                    <td>@clo.Bprice</td>
+                    <td>
+
+                        <a asp-controller="Bag" asp-action="Delete"
+                           asp-route-id="@clo.IDB">Delete</a>
+                    </td>
+
+                </tr>
+
+
+            }
+        <td><img src="~/Images/Bpink.jpg" width="200" /></td>
+        <td> <img src="~/Images/Bcamel.jpg" width="200" /></td>
+
+
+        </tbody>
+
+
+    </table>
+
+    <div>
+        <div class="v"> <a asp-action="Index" asp-controller="Bag" class="btn btn-primary ">Back</a></div>
+        <div class="v"> <a asp-action="Register" asp-controller="Bag" class="btn btn-primary">Add new bag</a></div>
+        <div class="v"> <a asp-action="Index1" asp-controller="Women" class="btn btn-primary">Home</a></div>
+    </div>
+
+
+
+

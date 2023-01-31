@@ -1,0 +1,35 @@
+﻿@model List<Clothes>
+@{ ViewBag.Title = "clothes";}
+
+
+<h2>list of clothes </h2>
+
+<table class="table table-bordered" table-striped>
+
+    <thead>
+        <tr>
+            <th>type</th>
+
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var c in Model)
+        {
+            <tr>
+                <td>@c.Ctype</td>
+
+
+            </tr>
+
+
+        }
+
+
+
+    </tbody>
+
+
+</table>

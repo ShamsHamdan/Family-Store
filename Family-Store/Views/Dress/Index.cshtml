@@ -1,0 +1,37 @@
+﻿@model List<Dresses>
+@{ ViewBag.Title = "dress";}
+
+
+<h2>dress details</h2>
+
+<table class="table table-bordered" table-striped>
+
+    <thead>
+        <tr>
+            <th>IDC</th>
+            <th>Color</th>
+            <th>type</th>
+             <th>materail</th>
+            <th>price</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        
+        @foreach (var d in Model)
+        {
+            <tr>
+                <td>@d.Dcolor</td>
+                <td>@d.Dlength</td>
+                <td>@d.Dfabric</td>
+                <td>@d.Dprice</td>
+                <td>@d.Dsize</td>
+               </tr>
+
+
+        }
+    </tbody>
+
+
+</table>

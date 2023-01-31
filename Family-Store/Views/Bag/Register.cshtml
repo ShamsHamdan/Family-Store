@@ -1,0 +1,53 @@
+﻿@model Bags  
+
+@{
+    ViewData["Title"] = "New Bag";
+}
+
+
+<h4>New Bag</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IDC" class="control-label"></label>
+                <input asp-for="IDC" class="form-control" value="4" readonly />
+                <span asp-validation-for="IDC" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Bcolor" class="control-label"></label>
+                <input asp-for="Bcolor" class="form-control" />
+                <span asp-validation-for="Bcolor" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Btype" class="control-label"></label>
+                <input asp-for="Btype" class="form-control" />
+                <span asp-validation-for="Btype" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Bmaterail" class="control-label"></label>
+                <input asp-for="Bmaterail" class="form-control" />
+                <span asp-validation-for="Bmaterail" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Bprice" class="control-label"></label>
+                <input asp-for="Bprice" class="form-control" />
+                <span asp-validation-for="Bprice" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Bag" class="btn btn-primary">Cancel</a>
+</div>

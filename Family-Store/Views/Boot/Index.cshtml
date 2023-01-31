@@ -1,0 +1,75 @@
+﻿@model List<Boots>
+@{ ViewBag.Title = "boot";}
+
+<h2>bags details</h2>
+<div>
+
+    <form asp-action="search" method="get">
+
+        <div>
+            <label> search by bag color</label>
+            <input type="text" name="k" />
+            <button type="submit">search</button>
+
+
+
+        </div>
+
+
+
+
+    </form>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="table table-bordered" table-striped>
+
+    <thead>
+        <tr>
+            <th>color</th>
+            <th>photo</th>
+            <th>price</th>
+            <th>size</th>
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var clo in Model)
+        {
+        <tr>
+            <td>@clo.BOcolor</td>
+
+            <td><img src="@clo.BObrand" alt="bag "></td>
+
+            <td>@clo.BOprice</td>
+            <td>@clo.BOsize</td>
+        </tr>
+
+
+        }
+
+
+
+    </tbody>
+
+
+</table>
+
+<img src="https://www.w3schools.com/images/w3schools_green.jpg" />

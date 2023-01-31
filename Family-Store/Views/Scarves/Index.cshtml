@@ -1,0 +1,87 @@
+﻿@model List<Scarves>
+@{ ViewBag.Title = "scarf";}
+
+<h2>Scarves details</h2>
+<div>
+
+    <form asp-action="search" method="get">
+
+        <div>
+            <label for="s"> search by  scarf color</label>
+            <input type="text" name="k" id="s" />
+            <button type="submit">search</button>
+
+
+
+        </div>
+    </form>
+</div>
+
+
+
+
+
+<div>
+
+    <form asp-action="Order" method="get">
+
+
+
+        <label for="scarf">Order By:</label>
+        <select name="order" id="scarf">
+            <option value="price">Price</option>
+
+        </select>
+
+        <input type="submit" value="Submit">
+
+
+
+
+    </form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table class="table table-bordered" table-striped>
+
+    <thead>
+        <tr>
+            <th>color</th>
+            <th>price</th>
+            <th>photo</th>
+
+
+
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var clo in Model)
+        {
+            <tr>
+                <td>@clo.SCcolor</td>
+                <td>@clo.SCprice</td>
+                <td><img src="@clo.SCfabric" alt="bag "></td>
+                
+
+            </tr>
+
+
+        }
+
+
+
+    </tbody>
+
+

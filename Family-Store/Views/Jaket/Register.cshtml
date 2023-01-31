@@ -1,0 +1,53 @@
+﻿@model Jakets
+
+@{
+    ViewData["Title"] = "New Jaket";
+}
+
+
+<h4>New Jaket</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IDJ" class="control-label"></label>
+                <input asp-for="IDJ" class="form-control" value="8" readonly />
+                <span asp-validation-for="IDJ" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Jcolor" class="control-label"></label>
+                <input asp-for="Jcolor" class="form-control" />
+                <span asp-validation-for="Jcolor" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Jbrand" class="control-label"></label>
+                <input asp-for="Jbrand" class="form-control" />
+                <span asp-validation-for="Jbrand" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Jprice" class="control-label"></label>
+                <input asp-for="Jprice" class="form-control" />
+                <span asp-validation-for="Jprice" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="Jsize" class="control-label"></label>
+                <input asp-for="Jsize" class="form-control" />
+                <span asp-validation-for="Jsize" class="text-danger"></span>
+            </div>
+
+
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index" asp-controller="Jaket" class="btn btn-primary">Cancel</a>
+</div>
